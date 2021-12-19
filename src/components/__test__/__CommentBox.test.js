@@ -1,8 +1,8 @@
 import React from "react";
 import { mount } from "enzyme";
-import Root from "../Root";
+import Root from "../../Root";
 
-import CommentBox from "../components/CommentBox";
+import CommentBox from "../CommentBox";
 
 let wrapped;
 
