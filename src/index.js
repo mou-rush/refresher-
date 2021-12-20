@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Routes } from "react-router-dom";
 import Root from "./Root";
 
 import App from "./components/App";
@@ -8,7 +8,7 @@ import App from "./components/App";
 ReactDOM.render(
   <Root>
     <BrowserRouter>
-      <Route path="/" component={App} />
+      <Routes path="/" component={App} />
       <App />
     </BrowserRouter>
   </Root>,
