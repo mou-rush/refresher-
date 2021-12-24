@@ -3,8 +3,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import CommentBox from "../components/CommentBox";
 import CommentList from "../components/CommentList";
-import * as actions from "../actions";
-
+// import * as actions from "../actions";
+import { changeAuth } from "../actions";
 class App extends Component {
   renderButton() {
     if (this.props.auth) {
@@ -25,7 +25,16 @@ class App extends Component {
         <li>
           <Link to="/post">Post A Comment</Link>
         </li>
-        <li>{this.renderButton()}</li>
+        <li>
+          {this.renderButton()}
+          {/* {this.props.auth ? (
+            <button onClick={() => this.props.changeAuth(false)}>
+              Sign Out
+            </button>
+          ) : (
+            <button onClick={() => this.props.changeAuth(true)}>Sign In</button>
+          )} */}
+        </li>
       </ul>
     );
   }
@@ -47,4 +56,4 @@ function mapStateToProps(state) {
   return { auth: state.auth };
 }
 
-export default connect(mapStateToProps, actions)(App);
+export default connect(mapStateToProps, changeAuth)(App);
